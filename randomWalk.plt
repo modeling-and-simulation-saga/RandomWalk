@@ -7,7 +7,8 @@ set output "randomWalk.pdf"
 set title "Random Walk ({/:Italic t} = 1000)"
 set style fill solid border lc rgb "black"
 t = 1000
-s = sqrt(4*t*0.25)
+p = 0.5
+s = sqrt(4*t*p*(1-p))
 mu = t*(2*p-1)
 f(x) = (1/sqrt(2*pi*s*s))*exp(-(x-mu)*(x-mu)/2/s/s)
-plot "output-100000.txt" with boxes notitle,f(x) lt 8 lw 5 notitle
+plot "output-100000-0.5.txt" with boxes notitle,f(x) lt 8 lw 5 notitle
