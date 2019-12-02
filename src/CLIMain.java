@@ -18,18 +18,19 @@ public class CLIMain {
     public static void main(String[] args) throws IOException {
         int n = 100000;
         int tmax = 1000;
-        Simulation sys = new Simulation(n);
+        double p = 0.5;
+        Simulation sys = new Simulation(n,p);
         for (int t = 0; t < tmax; t++) {
             sys.oneStep();
         }
         List<Point2D.Double> plist
                 = PositionHistogram.getHist(sys.getWalkers());
         String filename = Simulation.class.getSimpleName()
-                + "-output-" + String.valueOf(n) + ".txt";
+                + "-output-" + String.valueOf(n) + "-"+String.valueOf(p)+ ".txt";
         try (BufferedWriter out
                 = myLib.utils.FileIO.openWriter(filename)) {
-            for (Point2D.Double p : plist) {
-                myLib.utils.FileIO.writeSSV(out, p.x, p.y);
+            for (Point2D.Double pp : plist) {
+                myLib.utils.FileIO.writeSSV(out, pp.x, pp.y);
             }
         }
     }
