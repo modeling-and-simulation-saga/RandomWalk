@@ -1,11 +1,9 @@
-#set terminal pdfcairo enhanced size 29cm,20cm font "Times-New-Roman"  fontscale 1.2
 set terminal png fontscale 1.
 set xlabel "{/:Italic x}"
 set ylabel "{/:Italic p}"
 set yrange [0:0.016]
 set xrange[-150:150]
 set output "randomWalk.png"
-#set output "randomWalk.pdf"
 set title "Random Walk ({/:Italic t} = 1000)"
 set style fill solid border lc rgb "black"
 t = 1000
