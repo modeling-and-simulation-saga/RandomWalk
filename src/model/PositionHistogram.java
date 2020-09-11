@@ -34,8 +34,8 @@ public class PositionHistogram {
         //ヒストグラムの生成
         int h[] = new int[xmax - xmin + 1];
         for (Walker w : walkers) {
-            int k = w.getX() - xmin;
-            h[k]++;
+
+
         }
         //ヒストグラムをリストに変換
         //ヒストグラムから相対頻度に変換
